@@ -11,6 +11,20 @@ const PORT = process.env.PORT || 5555;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Using Mongoose for MongoDB, myReadingList
+mongoose.connect(process.env.MONGO_URI || "mongodb://localhost/myReadingList",
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false,
+    },
+    (err) => {
+        if (err) throw err;
+        console.log("Connected to myReadingList database")
+    }
+);
+
 // Let the user know the server is running, and which port.  Yeay!
 app.listen(PORT, () => {
     console.log(`listening at http://localhost:${PORT}`);
