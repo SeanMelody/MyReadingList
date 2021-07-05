@@ -25,6 +25,17 @@ mongoose.connect(process.env.MONGO_URI || "mongodb://localhost/myReadingList",
     }
 );
 
+// More Heroku optimization
+if (process.env.NODE_ENV == "production") {
+    app.use(express.static("client/build"))
+}
+
+
+//Routes
+app.use("/users", require("./routes/userRoutes"))
+
+
+
 // Let the user know the server is running, and which port.  Yeay!
 app.listen(PORT, () => {
     console.log(`listening at http://localhost:${PORT}`);
