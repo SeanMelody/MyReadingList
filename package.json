@@ -1,6 +1,22 @@
 {
+  "name": "ReadingList",
+  "version": "1.0.0",
+  "description": "Create your own reading list",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-prebuild": "npm install",
+    "heroku-postbuild": "npm run build"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "concurrently": "^6.2.0",
     "crypto": "^1.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
