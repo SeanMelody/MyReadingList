@@ -10,10 +10,10 @@ function App() {
       <h1>Reading List</h1>
       <Router>
         <Link to="/register">
-          <button>Register</button>
+          <button className="btn btn-danger margin10">Register</button>
         </Link>
         <Link to="/login">
-          <button>Login</button>
+          <button className="btn btn-primary margin10">Login</button>
         </Link>
 
 

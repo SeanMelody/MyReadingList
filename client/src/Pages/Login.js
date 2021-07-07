@@ -12,7 +12,7 @@ const Login = () => {
                 <h3>Password</h3>
                 <input></input>
 
-                <input type="submit" />
+                <input type="submit" className="btn btn-primary margin10" />
             </form>
         </div>
     )
