@@ -9,16 +9,17 @@ const Register = () => {
         setForm({ ...form, [e.target.name]: e.target.value })
     }
 
-    const submit = (e) => {
+    const submit = async (e) => {
         e.preventDefault()
-        console.log(form)
+        // console.log(form)
 
-        // try {
-        //     await axios.post("/users/register", form);
-        //     history.push("/")
-        // } catch (err) {
-        //     console.log(err.response)
-        // }
+        try {
+            await axios.post("/users/register", form);
+            console.log(form)
+            // history.push("/")
+        } catch (err) {
+            console.log(err.response)
+        }
     }
 
     return (
@@ -28,11 +29,11 @@ const Register = () => {
                 <h3>Email</h3>
                 <input onChange={onChange} type="text" name="email" className="row col-md-12"></input>
                 <h3>User Name</h3>
-                <input onChange={onChange} type="text" name="password" className="row col-md-12"></input>
-                <h3>Password</h3>
-                <input onChange={onChange} type="text" name="passwordCheck" className="row col-md-12"></input>
-                <h3>Please Re-type your password</h3>
                 <input onChange={onChange} type="text" name="displayName" className="row col-md-12"></input>
+                <h3>Password</h3>
+                <input onChange={onChange} type="text" name="password" className="row col-md-12"></input>
+                <h3>Please Re-type your password</h3>
+                <input onChange={onChange} type="text" name="passwordCheck" className="row col-md-12"></input>
                 <input type="submit" className="btn btn-primary margin10" />
             </form>
         </div>

@@ -9,14 +9,14 @@ const userSchema = new mongoose.Schema({
         unique: true,
         match: [/.+@.+\..+/, "Please enter a valid email"]
     },
+    displayName: {
+        type: String,
+        required: true,
+    },
     password: {
         type: String,
         required: true,
         minLength: 5,
-    },
-    displayName: {
-        type: String,
-        required: true,
     },
     confirmed: {
         type: Boolean,
