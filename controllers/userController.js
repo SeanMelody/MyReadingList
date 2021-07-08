@@ -9,21 +9,20 @@ module.exports = {
             res.send(err.response)
         }
 
-        // User.find({})
-        //     .then((user) => {
-        //         res.json(user)
-        //     })
+        User.find({})
+            .then((user) => {
+                res.json(user)
+            })
     },
 
 
     register: async (req, res) => {
         try {
             // Deconstruct the user object
-            const { email, password, passwordCheck, displayName } = req.body
+            const { email, displayName, password, passwordCheck } = req.body
 
-            console.log(req.body)
             // Make suer every field is entered
-            if (!email || !password || !passwordCheck || !displayName) {
+            if (!email || !displayName || !password || !passwordCheck) {
                 return res.status(400).json({ msg: "Must enter in all fields" })
             }
             // Make sure password is long enough
@@ -52,6 +51,8 @@ module.exports = {
             })
 
             console.log(newUser)
+            const savedUser = await newUser.save()
+            res.json(savedUser)
 
         } catch (err) {
             res.status(500).json({ msg: err })
