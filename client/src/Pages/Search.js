@@ -1,6 +1,6 @@
 // Import all the necessary goodness!
 import React, { Component } from 'react'
-import SearchForm from "../Components/Search/SearchForm"
+import SearchForm from "../Components/SearchForm"
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 import API from "../utils/API"

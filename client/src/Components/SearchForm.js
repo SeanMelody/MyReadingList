@@ -7,9 +7,9 @@ const SearchForm = (props) => {
 
     //Return the search form!
     return (
-        <form style={SearchStyles.FormStyles} className="border-dark">
+        <form className="border-dark">
             {/* Header Component here */}
-            <Header title={"Search For a Book"} />
+
             <div className="row form-group">
                 <div className="col-md-9">
                     {/* Input form for searching the GoogleBooksAPI */}
@@ -24,7 +24,7 @@ const SearchForm = (props) => {
                     />
                 </div>
                 {/* Button to start the search */}
-                <button style={SearchStyles.Button}
+                <button
                     onClick={props.handleFormSubmit} className="btn btn-outline-primary col-md-3">
                     Search
                 </button>
