@@ -1,5 +1,6 @@
 // Import all the necessary goodness!
 import React, { Component } from 'react'
+import SearchForm from "../Components/Search/SearchForm"
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 import API from "../utils/API"
@@ -80,11 +81,11 @@ export default class Search extends Component {
             <div>
 
                 {/* Search form so user can search books */}
-                {/* <SearchForm */}
-                {/* value={this.state.search}
+                <SearchForm
+                    value={this.state.search}
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
-                /> */}
+                />
                 {/* <ToastContainer /> */}
                 {/* Statement to display something different if nothing has been searched for yet */}
                 {this.state.result.length ? (
