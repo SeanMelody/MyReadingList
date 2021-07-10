@@ -43,14 +43,48 @@ module.exports = {
             const salt = await bcrypt.genSalt();
             const passwordHash = await bcrypt.hash(password, salt)
 
-            // Set new user to a new object to send back to the front end, email, hashed password and display name
             const newUser = new User({
                 email,
                 password: passwordHash,
                 displayName,
             })
 
-            console.log(newUser)
+
+            // Confirm starts here
+            const confirmationToken = new Confirm({
+                token: crypto.randomBytes(10).toString("hex"),
+                authorId: newUser._id,
+            })
+            console.log(newUser._id)
+            console.log(confirmationToken.authorId)
+
+            // Transporter for emailing confirmation link!
+            // Messages sent via my throw away email: dzesean@gmail.com
+            // console.log(confirmationToken)
+            const transporter = nodemailer.createTransport({
+                service: "gmail",
+                auth: {
+                    user: "dzesean@gmail.com",
+                    pass: process.env.EMAILPASS,
+                },
+            })
+
+
+            const mailOptions = {
+                from: "dzesean@gmail.com",
+                to: newUser.email,
+                subject: "Please confirm your email for burrito maps!",
+                text: `Click the link to confirm  your account! http://localhost:3000/confirm_token${confirmationToken.token}`,
+            }
+
+            transporter.sendMail(mailOptions, (err, info) => {
+                if (err) {
+                    console.log(err)
+                } else {
+                    console.log(`Confirm email was sent with: http://localhost:3000/confirm_token${confirmationToken.token} for authorId ${newUser._id}`)
+                }
+            })
+            await confirmationToken.save()
             const savedUser = await newUser.save()
             res.json(savedUser)
 
