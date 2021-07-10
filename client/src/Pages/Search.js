@@ -127,7 +127,7 @@ export default class Search extends Component {
                     </div>
                 ) : (
                     // Display this if there are no saved books yet
-                    <h3>Please Search For a Book</h3>
+                    <h3 className="margin10">Books will Display Here</h3>
                 )}
 
             </div >
