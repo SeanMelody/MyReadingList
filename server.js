@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose")
-// const path = require("path");
+const path = require("path");
 
 
 // Set up for Heroku or Port 5555 cause I'm crazy!
@@ -35,6 +35,7 @@ if (process.env.NODE_ENV == "production") {
 //Routes
 app.use("/users", require("./routes/userRoutes"))
 app.use("/readingList", require("./routes/readingListRoutes"))
+app.use("/register", require("./routes/confirmRoutes"))
 
 
 //%5650 --$38 a person  with limeaid 6730 or 45 per person
