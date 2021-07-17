@@ -6,7 +6,7 @@ const Books = (props) => {
     const { savedBooks, getBooks } = props
 
     useEffect(() => {
-        getBooks()
+        // getBooks()
         // eslint-disable-next-line
     }, [])
 

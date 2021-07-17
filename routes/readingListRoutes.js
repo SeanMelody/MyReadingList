@@ -9,3 +9,6 @@ const { newBook, getAllReadingList } = require("../controllers/readingListContro
 
 //Get all books for development purposes
 router.get("/all", getAllReadingList)
+
+// Export as router
+module.exports = router;
