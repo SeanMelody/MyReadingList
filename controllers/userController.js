@@ -10,15 +10,13 @@ module.exports = {
 
     getUser: async (req, res) => {
         try {
-            res.send("Users routes")
+            User.find({})
+                .then((user) => {
+                    res.json(user)
+                })
         } catch (err) {
-            res.send(err.response)
+            res.send("getUser", err.response)
         }
-
-        User.find({})
-            .then((user) => {
-                res.json(user)
-            })
     },
 
 
