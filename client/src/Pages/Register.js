@@ -17,6 +17,7 @@ const Register = () => {
         // console.log(form)
 
         try {
+            console.log(form)
             const newUser = await axios.post("/users/register", form);
             console.log(newUser)
             // history.push("/")

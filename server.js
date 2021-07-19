@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose")
 const path = require("path");
+const { isRegExp } = require("util");
 
 
 // Set up for Heroku or Port 5555 cause I'm crazy!
@@ -38,9 +39,9 @@ app.use("/readingList", require("./routes/readingListRoutes"))
 app.use("/register", require("./routes/confirmRoutes"))
 
 
-//%5650 --$38 a person  with limeaid 6730 or 45 per person
-
-
+// app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+// })
 
 // Let the user know the server is running, and which port.  Yeay!
 app.listen(PORT, () => {
