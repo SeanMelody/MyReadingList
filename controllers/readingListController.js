@@ -35,6 +35,31 @@ module.exports = {
         }
     },
 
+    getUserReadingList: async (req, res) => {
+        // console.log("getuserBurritos")
 
+        try {
+            const allReadingList = await ReadingList.find({ authorId: req.user })
+            res.json(allReadingList)
+
+        } catch (err) {
+            console.log(err)
+            res.send("Can not get readingList", err)
+        }
+    },
+
+    // Get All ReadingLists!
+    getAllReadingLists: (req, res) => {
+
+        try {
+            ReadingList.find({})
+                .then((all) => {
+                    res.json(all)
+                })
+        }
+        catch (err) {
+            console.log("Not able to get all ReadingLists", err)
+        }
+    },
 
 }
