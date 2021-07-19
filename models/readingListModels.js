@@ -1,9 +1,8 @@
 // Const for mongoose
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
 // Declare the ReadingList Schema
-const readingListSchema = new Schema({
+const readingListSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -12,9 +11,15 @@ const readingListSchema = new Schema({
         type: [String],
         required: true
     },
-    description: String,
-    image: String,
-    link: String,
+    description: {
+        type: String
+    },
+    image: {
+        type: String
+    },
+    link: {
+        type: String
+    },
     authorId: {
         type: String,
         // required: true,
@@ -22,8 +27,6 @@ const readingListSchema = new Schema({
 
 });
 
-// const for the ReadingList mongoose Database
-const ReadingList = mongoose.model("ReadingList", readingListSchema);
 
-// module.export it!
-module.exports = ReadingList;
+// module.export it! as Reading List
+module.exports = ReadingList = mongoose.model("ReadingList", readingListSchema);

@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// Confirmation token issued from the email link
 const confirmSchema = new mongoose.Schema({
     token: {
         type: String,
