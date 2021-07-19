@@ -1,4 +1,10 @@
 const User = require("../models/userModels")
+const Confirm = require("../models/confirmModels")
+const jwt = require("jsonwebtoken")
+const bcrypt = require("bcryptjs")
+const crypto = require("crypto")
+const nodemailer = require("nodemailer")
+require("dotenv").config()
 
 module.exports = {
 
