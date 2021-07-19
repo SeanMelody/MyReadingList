@@ -1,11 +1,12 @@
 const router = require("express").Router();
-const { newBook, getAllReadingList } = require("../controllers/readingListController")
+const auth = require("../middleware/auth")
+const { newBook, getAllReadingList, getUserReadingList } = require("../controllers/readingListController")
 
 //Post a new book to your reading list
-router.post("/books", newBook)
+router.post("/books", auth, newBook)
 
 //Get the reading list for display
-
+router.get("/", auth, getUserReadingList)
 
 
 //Get all books for development purposes
