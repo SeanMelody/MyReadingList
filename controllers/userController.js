@@ -19,7 +19,6 @@ module.exports = {
         }
     },
 
-
     register: async (req, res) => {
         try {
             // Deconstruct the user object
@@ -64,6 +63,7 @@ module.exports = {
 
             // Transporter for emailing confirmation link!
             // Messages sent via my throw away email: dzesean@gmail.com
+
             // console.log(confirmationToken)
             const transporter = nodemailer.createTransport({
                 service: "gmail",
