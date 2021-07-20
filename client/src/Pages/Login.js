@@ -15,6 +15,22 @@ const Login = () => {
         setForm({ ...form, [e.target.name]: e.target.value })
     }
 
+    const submitLoginForm = async (e) => {
+        e.preventDefault()
+
+        try {
+            const { data } = await axios.post("/users/login", form)
+            console.log(data)
+
+
+
+        }
+
+        catch (err) {
+            console.log("login error", err.response)
+        }
+    }
+
 
 
 
@@ -22,7 +38,7 @@ const Login = () => {
         <div>
             <h1>Login</h1>
             <div className="container">
-                <form>
+                <form onSubmit={submitLoginForm}>
                     <h3 className="col-md-12">Email:</h3>
                     <input onChange={onChange} type="text" name="email" className="row col-md-12"></input>
 
