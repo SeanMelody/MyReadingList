@@ -2,8 +2,10 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import Register from './Pages/Register';
 import Login from './Pages/Login';
+import Confirm from './Pages/Confirm';
 import Books from './Pages/Books';
 import Search from './Pages/Search';
+
 
 function App() {
   return (
@@ -19,9 +21,10 @@ function App() {
 
 
         <Switch>
-          <Route path="/search" component={Search} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
+          <Route path="/search" component={Search} />
+          <Route path="/confirm" component={Confirm} />
           <Route path="/" component={Books} />
         </Switch>
       </Router>
