@@ -7,7 +7,7 @@ const Login = () => {
 
     const [form, setForm] = useState()
 
-    // const { userData, setUserData } = useContext(userContext)
+    const { userData, setUserData } = useContext(userContext)
 
     const history = useHistory()
 
@@ -22,6 +22,20 @@ const Login = () => {
             const { data } = await axios.post("/users/login", form)
             console.log(data)
 
+            if (!data.user.confirmed) {
+                history.push("/confirm")
+                console.log("not confrimed")
+            } else {
+                console.log("confirmed")
+                setUserData({
+                    token: data.token,
+                    user: data.user,
+                    email: data.email
+                })
+
+                localStorage.setItem("auth-token", data.token)
+                history.push("/")
+            }
 
 
         }
