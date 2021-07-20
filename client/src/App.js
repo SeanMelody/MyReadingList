@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import Register from './Pages/Register';
 import Login from './Pages/Login';
 import Confirm from './Pages/Confirm';
+import ConfirmAccount from './Pages/ConfirmAccount'
 import Books from './Pages/Books';
 import Search from './Pages/Search';
 import UserContext from './Context/UserContext'
@@ -24,7 +25,14 @@ function App() {
       localStorage.setItem("auth-token", "")
     }
     else {
-      console.log("no auth token")
+      try {
+        const userRegister = await axios.get("/users", {
+          headers: { "x-auth-token": token },
+        })
+        setUserData({ token, user: userRegister.data })
+      } catch (err) {
+        console.log("User must log in")
+      }
     }
 
   }
@@ -51,6 +59,7 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/search" component={Search} />
             <Route path="/confirm" component={Confirm} />
+            <Route path="confirm_token:token" component={ConfirmAccount} />
             <Route path="/" component={Books} />
           </Switch>
         </UserContext.Provider>
