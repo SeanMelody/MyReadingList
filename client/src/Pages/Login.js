@@ -30,7 +30,7 @@ const Login = () => {
                 setUserData({
                     token: data.token,
                     user: data.user,
-                    // email: data.email
+                    email: data.email
                 })
                 console.log(userData)
 
@@ -46,6 +46,10 @@ const Login = () => {
         }
     }
 
+    useEffect(() => {
+        // console.log(userData)
+        if (userData.user) history.push("/")
+    }, [userData.user, history])
 
 
 

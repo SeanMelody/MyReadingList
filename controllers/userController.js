@@ -47,8 +47,8 @@ module.exports = {
                 token: crypto.randomBytes(10).toString("hex"),
                 authorId: newUser._id,
             })
-            console.log(newUser._id)
-            console.log(confirmationToken.authorId)
+            // console.log(newUser._id)
+            // console.log(confirmationToken.authorId)
 
             // Transporter for emailing confirmation link!
             // Messages sent via my throw away email: dzesean@gmail.com
@@ -150,8 +150,6 @@ module.exports = {
             res.send({ error: err })
         }
     }
-
-
 
 
 }

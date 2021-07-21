@@ -25,6 +25,7 @@ function App() {
       localStorage.setItem("auth-token", "")
     }
     else {
+
       try {
         const userRes = await axios.get("/users", {
           headers: { "x-auth-token": token },
