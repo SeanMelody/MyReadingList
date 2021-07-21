@@ -136,6 +136,7 @@ module.exports = {
             res.json({
                 displayName: user.displayName,
                 id: user._id,
+                email: user.email
             })
         } catch (err) {
             res.send("getUser", err.response)
