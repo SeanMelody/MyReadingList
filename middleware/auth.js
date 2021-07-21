@@ -7,8 +7,10 @@ const auth = (req, res, next) => {
         const token = req.header("x-auth-token")
 
         if (!token) {
+            console.log("token", token)
             return res.status(401).json({
                 msg: "No authentication passed"
+
             })
         }
 

@@ -30,8 +30,9 @@ const Login = () => {
                 setUserData({
                     token: data.token,
                     user: data.user,
-                    email: data.email
+                    // email: data.email
                 })
+                console.log(userData)
 
                 localStorage.setItem("auth-token", data.token)
                 history.push("/")

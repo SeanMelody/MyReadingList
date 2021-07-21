@@ -15,6 +15,7 @@ module.exports = {
             confirmedUser.confirmed = true;
 
             confirmedUser.save();
+            console.log(confirmedUser.confirmed)
             res.send("success")
 
         } catch (err) {

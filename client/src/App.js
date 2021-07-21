@@ -26,10 +26,11 @@ function App() {
     }
     else {
       try {
-        const userRegister = await axios.get("/users", {
+        const userRes = await axios.get("/users", {
           headers: { "x-auth-token": token },
         })
-        setUserData({ token, user: userRegister.data })
+        console.log(userRes.data)
+        setUserData({ token, user: userRes.data })
       } catch (err) {
         console.log("User must log in")
       }
