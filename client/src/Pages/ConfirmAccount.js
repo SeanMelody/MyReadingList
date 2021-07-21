@@ -24,8 +24,14 @@ const ConfirmAccount = (props) => {
 
     return (
         <div>
-            Your account is confirmed {props.match.params.token}
-            <button className="btn">Return to Home</button>
+            <h3>Your account has been confirmed!</h3>
+            <h3> Please Log In</h3>
+            <h5>{props.match.params.token}</h5>
+            <a href="/login">
+                <button className="btn btn-success margin10">
+                    Login
+                </button>
+            </a>
         </div>
     )
 }
