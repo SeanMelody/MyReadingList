@@ -46,15 +46,35 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Reading List</h1>
       <Router>
-        <Link to="/register">
-          <button className="btn btn-danger margin10">Register</button>
-        </Link>
-        <Link to="/login">
-          <button className="btn btn-primary margin10">Login</button>
-        </Link>
+        {!userData.user ?
+          <>
+            <nav>
+              <button>My Reading List</button>
+              <Link to="/register">
+                <button className="btn btn-danger margin10">Register</button>
+              </Link>
+              <Link to="/login">
+                <button className="btn btn-primary margin10">Login</button>
+              </Link>
+            </nav>
+            <h1 className="jumbotron">Welcome!  Register and Login to create your own Reading List</h1>
 
+
+          </>
+          :
+          <>
+            <nav>
+              <button className="btn btn-info margin10">My Reading List</button>
+              <Link to="/search">
+                <button className="btn btn-danger margin10">Search For a Book</button>
+              </Link>
+              <Link to="/logout">
+                <button className="btn btn-primary margin10">Logout</button>
+              </Link>
+            </nav>
+          </>
+        }
         <UserContext.Provider value={{ userData, setUserData }} >
           <Switch>
             <Route path="/register" component={Register} />
