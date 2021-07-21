@@ -79,6 +79,7 @@ module.exports = {
             })
             await confirmationToken.save()
             const savedUser = await newUser.save()
+            console.log("controller, 82", savedUser)
             res.json(savedUser)
 
         } catch (err) {

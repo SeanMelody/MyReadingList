@@ -17,9 +17,10 @@ const Register = () => {
         // console.log(form)
 
         try {
-            console.log(form)
-            const newUser = await axios.post("/users/register", form);
-            console.log(newUser)
+            // console.log(form)
+            await axios.post("/users/register", form);
+            // const newUser = await axios.post("/users/register", form);
+            // console.log(newUser)
             history.push("/login")
         } catch (err) {
             console.log(err.response)

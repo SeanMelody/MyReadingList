@@ -24,13 +24,13 @@ function App() {
     if (token === null) {
       localStorage.setItem("auth-token", "")
     }
+    // If no auth token, call the database and set the userData
     else {
-
       try {
         const userRes = await axios.get("/users", {
           headers: { "x-auth-token": token },
         })
-        console.log(userRes.data)
+        console.log("app.js", userRes.data)
         setUserData({ token, user: userRes.data })
       } catch (err) {
         console.log("User must log in")
@@ -61,7 +61,7 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/search" component={Search} />
             <Route path="/confirm" component={Confirm} />
-            <Route path="confirm_token:token" component={ConfirmAccount} />
+            <Route path="/confirm_token:token" component={ConfirmAccount} />
             <Route path="/" component={Books} />
           </Switch>
         </UserContext.Provider>
