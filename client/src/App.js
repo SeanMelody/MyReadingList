@@ -39,6 +39,10 @@ function App() {
 
   }
 
+  const logout = () => {
+    console.log("logout")
+  }
+
   useEffect(() => {
     checkLoggedIn()
   }, [])
@@ -69,9 +73,9 @@ function App() {
               <Link to="/search">
                 <button className="btn btn-danger margin10">Search For a Book</button>
               </Link>
-              <Link to="/logout">
-                <button className="btn btn-primary margin10">Logout</button>
-              </Link>
+
+              <button onClick={logout} className="btn btn-primary margin10">Logout</button>
+
             </nav>
           </>
         }
