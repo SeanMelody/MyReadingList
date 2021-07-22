@@ -32,7 +32,7 @@ const Login = () => {
                     user: data.user,
                     email: data.email
                 })
-                console.log(userData)
+                // console.log(userData)
 
                 localStorage.setItem("auth-token", data.token)
                 history.push("/")

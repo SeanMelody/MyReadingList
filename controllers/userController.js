@@ -66,7 +66,7 @@ module.exports = {
             const mailOptions = {
                 from: "dzesean@gmail.com",
                 to: newUser.email,
-                subject: "Please confirm your email for burrito maps!",
+                subject: "Please confirm your email for My Reading List!",
                 text: `Click the link to confirm  your account! http://localhost:3000/confirm_token${confirmationToken.token}`,
             }
 
