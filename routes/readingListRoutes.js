@@ -3,7 +3,7 @@ const auth = require("../middleware/auth")
 const { newBook, getAllReadingList, getUserReadingList } = require("../controllers/readingListController")
 
 //Post a new book to your reading list
-router.post("/books", auth, newBook)
+router.post("/", auth, newBook)
 
 //Get the reading list for display
 router.get("/", auth, getUserReadingList)

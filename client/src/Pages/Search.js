@@ -62,7 +62,7 @@ export default class Search extends Component {
                 link: book.volumeInfo.previewLink
             }
             // Send fetch request to post it to the database
-            fetch(`/api/books`, {
+            fetch(`/readingList`, {
                 method: 'POST',
                 body: JSON.stringify(newSave),
                 headers: { "Content-Type": "application/json" }
