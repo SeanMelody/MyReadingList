@@ -40,7 +40,8 @@ function App() {
   }
 
   const logout = () => {
-    console.log("logout")
+    setUserData({ token: undefined, user: undefined })
+    localStorage.setItem("auth-token", "")
   }
 
   useEffect(() => {
@@ -54,7 +55,7 @@ function App() {
         {!userData.user ?
           <>
             <nav>
-              <button>My Reading List</button>
+              <button className="btn btn-info margin10">My Reading List</button>
               <Link to="/register">
                 <button className="btn btn-danger margin10">Register</button>
               </Link>
