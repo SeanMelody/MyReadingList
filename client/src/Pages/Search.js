@@ -1,8 +1,8 @@
 // Import all the necessary goodness!
 import React, { Component } from 'react'
 import SearchForm from "../Components/SearchForm"
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import API from "../utils/API"
 
 // Export default here instead of below!
@@ -75,11 +75,11 @@ export default class Search extends Component {
 
                 })
         }
-        // const notify = (book) => toast(`${book.volumeInfo.title} Saved`)
+        const notify = (book) => toast(`${book.volumeInfo.title} Saved`)
         //Return it all
         return (
             <div>
-
+                <ToastContainer />
                 {/* Search form so user can search books */}
                 <SearchForm
                     value={this.state.search}
