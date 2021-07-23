@@ -72,7 +72,7 @@ export default class Search extends Component {
                 .then((data) => {
 
                     console.log(`${book.volumeInfo.title} saved`)
-
+                    notify(`${book.volumeInfo.title} saved`)
                 })
         }
         const notify = (book) => toast(`${book.volumeInfo.title} Saved`)
@@ -86,7 +86,6 @@ export default class Search extends Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
-                {/* <ToastContainer /> */}
                 {/* Statement to display something different if nothing has been searched for yet */}
                 {this.state.result.length ? (
                     <div className="container">
