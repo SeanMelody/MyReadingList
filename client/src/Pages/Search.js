@@ -4,6 +4,7 @@ import SearchForm from "../Components/SearchForm"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import API from "../utils/API"
+import axios from "axios"
 
 // Export default here instead of below!
 export default class Search extends Component {
@@ -13,6 +14,7 @@ export default class Search extends Component {
         result: [],
         search: ""
     }
+
 
     // Search Books function for using the API to search for books
     searchBooks = query => {
@@ -52,7 +54,8 @@ export default class Search extends Component {
     render() {
 
         // Save book to the Mongoose database
-        const saveBook = (book) => {
+        const saveBook = async (book) => {
+
             console.log(book)
             let newSave = {
                 title: book.volumeInfo.title,
@@ -61,19 +64,26 @@ export default class Search extends Component {
                 image: book.volumeInfo.imageLinks.smallThumbnail,
                 link: book.volumeInfo.previewLink
             }
+            try {
+                const newBook = await axios.post("/readingList", newSave, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
+                console.log(newBook)
+            }
+            catch (err) {
+                console.log(err)
+            }
             // Send fetch request to post it to the database
-            fetch(`/readingList`, {
-                method: 'POST',
-                body: JSON.stringify(newSave),
-                headers: { "Content-Type": "application/json" }
-            })
-                // json that response and let the user know that it was saved
-                .then((response) => response.json())
-                .then((data) => {
-
-                    console.log(`${book.volumeInfo.title} saved`)
-                    notify(`${book.volumeInfo.title} saved`)
-                })
+            // fetch(`/readingList`, {
+            //     method: 'POST',
+            //     body: JSON.stringify(newSave),
+            //     headers: { "Content-Type": "application/json" }
+            // })
+            //     // json that response and let the user know that it was saved
+            //     .then((response) => response.json())
+            //     .then((data) => {
+            //         console.log(data)
+            //         // console.log(`${book.volumeInfo.title} saved`)
+            //         // notify(`${book.volumeInfo.title} saved`)
+            //     })
         }
         const notify = (book) => toast(`${book.volumeInfo.title} Saved`)
         //Return it all
