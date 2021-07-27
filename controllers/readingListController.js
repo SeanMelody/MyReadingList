@@ -12,10 +12,11 @@ module.exports = {
                 link: req.body.link,
                 authorId: req.user,
             })
-            console.log(newBook)
+            // console.log(newBook)
 
             const successSave = await newBook.save()
             res.json(successSave)
+            // console.log(successSave)
         } catch (err) {
             // res.send("error saving new Book: ", err)
             res.status().send("error saving new Book: ", err)
