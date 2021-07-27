@@ -66,7 +66,8 @@ export default class Search extends Component {
             }
             try {
                 const newBook = await axios.post("/readingList", newSave, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
-                console.log(newBook)
+                console.log(newBook.data)
+                notify(newBook.data.authorId)
             }
             catch (err) {
                 console.log(err)
