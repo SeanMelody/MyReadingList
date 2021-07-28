@@ -70,7 +70,9 @@ function App() {
           :
           <>
             <nav>
-              <button className="btn btn-info margin10">My Reading List</button>
+              <Link to="/">
+                <button className="btn btn-info margin10">My Reading List</button>
+              </Link>
               <Link to="/search">
                 <button className="btn btn-danger margin10">Search For a Book</button>
               </Link>
