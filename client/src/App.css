@@ -9,6 +9,15 @@
 .padding10 {
   padding: 10px;
 }
+
+.navbar {
+  background: linear-gradient(rgb(176, 239, 255), rgb(126, 230, 248));
+  height: 75px;
+}
+
+.marginTop {
+  margin-top: 15px;
+}
 /* .App-header {
   background-color: #282c34;
   min-height: 100vh;

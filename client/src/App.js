@@ -55,7 +55,7 @@ function App() {
       <Router>
         {!userData.user ?
           <>
-            <nav>
+            <nav className="navbar">
               <button className="btn btn-info margin10">My Reading List</button>
               <Link to="/register">
                 <button className="btn btn-danger margin10">Register</button>
@@ -70,7 +70,7 @@ function App() {
           </>
           :
           <>
-            <nav>
+            <nav className="navbar">
               <Link to="/">
                 <button className="btn btn-info margin10">My Reading List</button>
               </Link>
