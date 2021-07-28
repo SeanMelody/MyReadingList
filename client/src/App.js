@@ -56,12 +56,12 @@ function App() {
         {!userData.user ?
           <>
             <nav className="navbar">
-              <button className="btn btn-info margin10">My Reading List</button>
+              <button className="btn btn-outline-dark margin10">My Reading List</button>
               <Link to="/register">
-                <button className="btn btn-danger margin10">Register</button>
+                <button className="btn btn-outline-dark margin10">Register</button>
               </Link>
               <Link to="/login">
-                <button className="btn btn-primary margin10">Login</button>
+                <button className="btn btn-outline-dark margin10">Login</button>
               </Link>
             </nav>
             <h1 className="jumbotron">Welcome!  Register and Login to create your own Reading List</h1>
@@ -72,15 +72,15 @@ function App() {
           <>
             <nav className="navbar">
               <Link to="/">
-                <button className="btn btn-info margin10">My Reading List</button>
+                <button className="btn btn-outline-dark margin10">My Reading List</button>
               </Link>
               <Link to="/search">
-                <button className="btn btn-danger margin10">Search For a Book</button>
+                <button className="btn btn-outline-dark margin10">Search For a Book</button>
               </Link>
 
-              <button onClick={logout} className="btn btn-primary margin10">Logout</button>
-
+              <button onClick={logout} className="btn btn btn-outline-danger margin10">Logout</button>
             </nav>
+
           </>
         }
         <UserContext.Provider value={{ userData, setUserData }} >
