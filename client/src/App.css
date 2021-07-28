@@ -5,6 +5,10 @@
 .margin10 {
   margin: 10px;
 }
+
+.padding10 {
+  padding: 10px;
+}
 /* .App-header {
   background-color: #282c34;
   min-height: 100vh;

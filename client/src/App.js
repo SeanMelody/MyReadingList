@@ -7,6 +7,7 @@ import Confirm from './Pages/Confirm';
 import ConfirmAccount from './Pages/ConfirmAccount'
 import Books from './Pages/Books';
 import Search from './Pages/Search';
+import Footer from './Components/Footer'
 import UserContext from './Context/UserContext'
 import axios from 'axios'
 
@@ -93,6 +94,7 @@ function App() {
           </Switch>
         </UserContext.Provider>
       </Router>
+      <Footer />
     </div>
   );
 }
