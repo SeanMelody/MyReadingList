@@ -94,7 +94,7 @@ function App() {
           </Switch>
         </UserContext.Provider>
       </Router>
-      <Footer />
+      <Footer user={userData} />
     </div>
   );
 }
