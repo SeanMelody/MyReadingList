@@ -1,11 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React from 'react'
 import { useHistory } from "react-router-dom"
-import userContext from "../Context/UserContext"
 import axios from 'axios'
 
 const Footer = (props) => {
-
-    // const { userData, setUserData } = useContext(userContext)
 
     const history = useHistory()
 
@@ -22,22 +19,6 @@ const Footer = (props) => {
             console.log(err)
         }
     }
-
-
-
-    // Use effect to make sure the user is signed in, and if not, then send to login
-    // useEffect(() => {
-    //     if (!userData.user) {
-    //         history.push("/login")
-    //     }
-
-    //     // console.log(userData.user)
-
-    //     userData.user
-    //         ? console.log(userData.user.displayName)
-    //         : console.log("User loading")
-
-    // }, [userData.user, history])
 
     return (
         <footer className="footer fixed-bottom">
