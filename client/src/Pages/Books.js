@@ -52,7 +52,7 @@ const Books = () => {
 
     return (
         <div>
-            <h1>Your Reading List (Home)</h1>
+            <h1 className="margin10">Your Reading List</h1>
 
             {readingList.length ? (
                 <div className="container">
@@ -64,7 +64,7 @@ const Books = () => {
                                 <h4 className="col-md-5">{book.title}</h4>
                                 {/* Button to view the book on google books */}
                                 <button
-                                    className="btn btn-outline-primary">
+                                    className="btn btn-outline-primary margin10">
                                     <a
                                         href={book.link} target="_blank" rel="noopener noreferrer"
                                     >
@@ -73,7 +73,7 @@ const Books = () => {
                                 </button>
                                 {/* Button to call the delete book function */}
                                 <button
-                                    className="btn btn-outline-danger"
+                                    className="btn btn-outline-danger margin10"
                                     onClick={() => deleteBook(book)}>Delete Book
                                         </button>
 

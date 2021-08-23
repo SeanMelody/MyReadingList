@@ -9,7 +9,7 @@ const SearchForm = (props) => {
     return (
         <>
 
-            <h3>Search</h3>
+            <h2 className="margin10">Search</h2>
             <form className="border-dark">
                 {/* Header Component here */}
 

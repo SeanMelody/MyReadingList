@@ -107,7 +107,7 @@ export default class Search extends Component {
                                     <div className="card-title row justify-content-around">
                                         <h4 className="col-md-5">{book.volumeInfo.title}</h4>
                                         {/* Button to view the book on googlebooks */}
-                                        <button className="btn btn-outline-danger links">
+                                        <button className="btn btn-outline-danger links margin10">
                                             <a className="links"
                                                 href={book.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">
                                                 View on Google Books
@@ -115,7 +115,7 @@ export default class Search extends Component {
                                         </button>
                                         {/* Button to save the book to the database */}
                                         <button
-                                            className="btn btn-outline-success"
+                                            className="btn btn-outline-success margin10"
                                             onClick={() => saveBook(book)} >Save Book
                                 </button>
                                     </div>
@@ -137,7 +137,7 @@ export default class Search extends Component {
                     </div>
                 ) : (
                     // Display this if there are no saved books yet
-                    <h3 className="margin10">Books will Display Here</h3>
+                    <h3 className="space-large">Search for a book and they will display here</h3>
                 )}
 
             </div >
