@@ -35,7 +35,7 @@ const Login = () => {
                 // console.log(userData)
 
                 localStorage.setItem("auth-token", data.token)
-                history.push("/")
+                history.push("/w=")
             }
 
 

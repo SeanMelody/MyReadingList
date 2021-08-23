@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from "react"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import Welcome from './Pages/Welcome';
 import Register from './Pages/Register';
 import Login from './Pages/Login';
 import Confirm from './Pages/Confirm';
@@ -64,7 +65,7 @@ function App() {
                 <button className="btn btn-outline-dark margin10">Login</button>
               </Link>
             </nav>
-            <h1 className="jumbotron">Welcome!  Register and Login to create your own Reading List</h1>
+            {/* <h1 className="jumbotron">Welcome!  Register and Login to create your own Reading List</h1> */}
 
 
           </>
@@ -85,6 +86,7 @@ function App() {
         }
         <UserContext.Provider value={{ userData, setUserData }} >
           <Switch>
+            <Route path="/welcome" component={Welcome} />
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
             <Route path="/search" component={Search} />
