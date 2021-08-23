@@ -57,7 +57,10 @@ function App() {
         {!userData.user ?
           <>
             <nav className="navbar">
-              <button className="btn btn-outline-dark margin10">My Reading List</button>
+              <h3 className="margin10">My Reading List</h3>
+              <Link to="/welcome">
+                <button className="btn btn-outline-dark margin10">Welcome</button>
+              </Link>
               <Link to="/register">
                 <button className="btn btn-outline-dark margin10">Register</button>
               </Link>

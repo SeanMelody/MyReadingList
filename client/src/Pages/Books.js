@@ -17,7 +17,7 @@ const Books = () => {
 
     useEffect(() => {
         if (!userData.user) {
-            history.push("/login")
+            history.push("/welcome")
         }
 
         // console.log(userData.user)
