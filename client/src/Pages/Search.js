@@ -22,7 +22,7 @@ export default class Search extends Component {
             .then(res => {
                 // Set the results to state
                 this.setState({ result: res.data.items })
-                //console.log it so I know what is retunred
+                //console.log it so I know what is returned
                 // console.log(res.data.items)
             })
             // Gotta catch them errors!
@@ -67,7 +67,7 @@ export default class Search extends Component {
             try {
                 const newBook = await axios.post("/readingList", newSave, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
                 console.log(newBook.data)
-                notify(newBook.data.authorId)
+                notify(newBook.data.title)
             }
             catch (err) {
                 console.log(err)
@@ -86,7 +86,7 @@ export default class Search extends Component {
             //         // notify(`${book.volumeInfo.title} saved`)
             //     })
         }
-        const notify = (book) => toast(`${book.volumeInfo.title} Saved`)
+        const notify = (book) => toast(`${book} Saved`)
         //Return it all
         return (
             <div>
@@ -103,7 +103,7 @@ export default class Search extends Component {
                         {/* Map through the API results */}
                         {
                             this.state.result.map(book =>
-                                <div className="card" key={book.id}>
+                                <div className="card margin10" key={book.id}>
                                     <div className="card-title row justify-content-around">
                                         <h4 className="col-md-5">{book.volumeInfo.title}</h4>
                                         {/* Button to view the book on googlebooks */}
