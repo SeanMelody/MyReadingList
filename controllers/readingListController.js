@@ -65,4 +65,16 @@ module.exports = {
         }
     },
 
+    deleteBook: (req, res) => {
+        console.log(req.body)
+        // try {
+        //     ReadingList.findByIdAndDelete({ req })
+
+        // }
+        // catch (err) {
+        //     console.log("Not able to delete Book", err)
+        // }
+
+    },
+
 }

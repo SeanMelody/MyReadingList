@@ -11,8 +11,33 @@ const Books = () => {
     const history = useHistory()
 
 
-    const deleteBook = (book) => {
+    const deleteBook = async (book) => {
         console.log(book)
+        console.log(book._id)
+
+
+        try {
+            const delBook = await axios.delete("/readingList", book.id, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
+            console.log(delBook.data)
+            // notify(newBook.data.title)
+        }
+        catch (err) {
+            console.log(err)
+        }
+
+
+
+        // fetch(`/api/books/${book._id}`, {
+        //     method: 'DELETE'
+        //     // Json that response
+        // })
+        //     .then((response) => response.json())
+        //     .then((data) => {
+        //         // Console log the data
+        //         console.log(data)
+        //     })
+        // Refresh the page so that the book is no longer shown
+        // window.location.reload()
     }
 
     useEffect(() => {
