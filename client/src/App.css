@@ -24,7 +24,8 @@
 }
 
 .footer {
-  background: grey;
+  border-top: 1px solid black;
+  background: rgba(180, 180, 180, 0.8);
 }
 /* .App-header {
   background-color: #282c34;
