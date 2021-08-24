@@ -6,7 +6,7 @@ import axios from 'axios'
 // Footer Component uses Props to get the user
 const Footer = (props) => {
     // Use history so we can send the user back to register if they delete account
-    const history = useHistory()
+    // const history = useHistory()
 
     // Return the Footer Component
     return (

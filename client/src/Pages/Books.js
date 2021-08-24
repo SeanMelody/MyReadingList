@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { useHistory } from "react-router-dom"
 import userContext from "../Context/UserContext"
 import axios from "axios"
+
 const Books = () => {
 
     const [readingList, setReadingList] = useState([])
@@ -17,7 +18,7 @@ const Books = () => {
 
 
         try {
-            const delBook = await axios.delete("/readingList", book.id, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
+            const delBook = await axios.delete("/readingList")
             console.log(delBook.data)
             // notify(newBook.data.title)
         }
