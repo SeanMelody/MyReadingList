@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: grey;
+  background-color: lightgrey;
 }
 
 
@@ -23,6 +23,11 @@
 
 .space-large {
   margin-top: 50px;
+}
+
+.card {
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
 }
 
 .footer {
