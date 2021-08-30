@@ -1,6 +1,8 @@
 .App {
   text-align: center;
+  background-color: grey;
 }
+
 
 .margin10 {
   margin: 10px;

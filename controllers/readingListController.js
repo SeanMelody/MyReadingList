@@ -66,7 +66,7 @@ module.exports = {
     },
 
     deleteBook: (req, res) => {
-        console.log(req.body)
+        console.log("hi from Reading List Controller")
         try {
             ReadingList.findByIdAndDelete(book,)
                 .then((res) => {

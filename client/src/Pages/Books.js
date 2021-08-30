@@ -19,7 +19,7 @@ const Books = () => {
 
         try {
             const delBook = await axios.delete("/readingList")
-            console.log(delBook.data)
+            console.log("after axios.delete")
             // notify(newBook.data.title)
         }
         catch (err) {
@@ -108,7 +108,7 @@ const Books = () => {
                         {/* Map through the results from the Mongoose Database */}
                         {readingList.map((book) => (
                             // Set each book to a card
-                            <div className="card" key={book._id}>
+                            <div className="card margin10" key={book._id}>
                                 <div className="card-title row justify-content-around" >
                                     <h4 className="col-md-5">{book.title}</h4>
                                     {/* Button to view the book on google books */}
