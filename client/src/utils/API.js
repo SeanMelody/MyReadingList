@@ -8,6 +8,8 @@ const APIKEY = "&key=&key=AIzaSyCKu9i_PLjFCu47B2YF3PQAK7E2trvFyjk"
 const requestUrl = "https://www.googleapis.com/books/v1/volumes?q="
 
 // export function for the axios API call yeay!
+
+// eslint-disable-next-line
 export default {
     // Set it to a function
     APISearch: function (query) {
