@@ -20,6 +20,7 @@ const Books = () => {
         try {
             const delBook = await axios.delete("/readingList")
             console.log("after axios.delete")
+            console.log(delBook.data)
             // notify(newBook.data.title)
         }
         catch (err) {

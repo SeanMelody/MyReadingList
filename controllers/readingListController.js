@@ -67,16 +67,16 @@ module.exports = {
 
     deleteBook: (req, res) => {
         console.log("hi from Reading List Controller")
-        try {
-            ReadingList.findByIdAndDelete(book,)
-                .then((res) => {
-                    res.json(res)
-                })
+        // try {
+        //     ReadingList.findByIdAndDelete(book,)
+        //         .then((res) => {
+        //             res.json(res)
+        //         })
 
-        }
-        catch (err) {
-            console.log("Not able to delete Book", err)
-        }
+        // }
+        // catch (err) {
+        //     console.log("Not able to delete Book", err)
+        // }
 
     },
 
