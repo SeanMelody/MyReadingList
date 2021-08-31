@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-color: lightgrey;
+  min-height: 100vh;
 }
 
 
@@ -28,6 +29,10 @@
 .card {
   background-color: rgb(235, 235, 235);
   border: 1px solid black;
+}
+
+.no-books {
+  height: 80vh;
 }
 
 .footer {

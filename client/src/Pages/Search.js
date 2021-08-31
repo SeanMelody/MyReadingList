@@ -111,13 +111,13 @@ export default class Search extends Component {
                                             <a className="links"
                                                 href={book.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">
                                                 View on Google Books
-                                    </a>
+                                            </a>
                                         </button>
                                         {/* Button to save the book to the database */}
                                         <button
                                             className="btn btn-outline-success margin10"
                                             onClick={() => saveBook(book)} >Save Book
-                                </button>
+                                        </button>
                                     </div>
                                     {/* Display each book */}
                                     <div className="card-body row">
@@ -137,7 +137,7 @@ export default class Search extends Component {
                     </div>
                 ) : (
                     // Display this if there are no saved books yet
-                    <h3 className="space-large">Search for a book and they will display here</h3>
+                    <h1 className="space-large no-books">Search for a book and they will display here</h1>
                 )}
 
             </div >

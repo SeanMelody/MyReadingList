@@ -1,7 +1,7 @@
 // Import all the react goodness
 import React from 'react'
-import { useHistory } from "react-router-dom"
-import axios from 'axios'
+// import { useHistory } from "react-router-dom"
+// import axios from 'axios'
 
 // Footer Component uses Props to get the user
 const Footer = (props) => {

@@ -118,13 +118,13 @@ const Books = () => {
                                             href={book.link} target="_blank" rel="noopener noreferrer"
                                         >
                                             View on Google Books
-                                            </a>
+                                        </a>
                                     </button>
                                     {/* Button to call the delete book function */}
                                     <button
                                         className="btn btn-outline-danger margin10"
                                         onClick={() => deleteBook(book)}>Delete Book
-                                        </button>
+                                    </button>
 
                                 </div>
                                 {/* Div to dispaly the card body, image, authors and descrioption */}
@@ -146,6 +146,9 @@ const Books = () => {
             </div>
             {/* On click button to delete account */}
             <button onClick={deleteAccount} className="btn btn-danger margin10">Delete Account</button>
+
+            {/* Confirmation Thing from Github for Alert */}
+            {/* <div className='delete-button' onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) this.onCancel(item) } } /> */}
         </>
     )
 }
