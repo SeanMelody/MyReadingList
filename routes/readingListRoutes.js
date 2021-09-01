@@ -9,7 +9,7 @@ router.post("/", auth, newBook)
 router.get("/", auth, getUserReadingList)
 
 //Route to delete a book
-router.delete("/", deleteBook)
+router.delete("/", auth, deleteBook)
 
 //Get all books for development purposes
 router.get("/all", getAllReadingList)

@@ -18,7 +18,7 @@ const Books = () => {
 
 
         try {
-            const delBook = await axios.delete("/readingList", book, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
+            const delBook = await axios.delete("/readingList", book._id)
             console.log("after axios.delete")
             console.log(delBook.data)
             // notify(newBook.data.title)

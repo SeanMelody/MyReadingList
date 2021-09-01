@@ -65,19 +65,19 @@ module.exports = {
         }
     },
 
-    deleteBook: (req, res) => {
-        console.log("hi from Reading List Controller")
-        console.log(req.body)
-        // try {
-        //     ReadingList.deleteOne(book)
-        //         .then((data) => {
-        //             res.json(data)
-        //         })
+    deleteBook: async (req, res) => {
+        // console.log("hi from Reading List Controller")
+        // console.log(req)
+        try {
+            const successSave = await ReadingList.findByIdAndDelete(req.book)
+                .then((data) => {
+                    res.json(data)
+                })
 
-        // }
-        // catch (err) {
-        //     console.log("Not able to delete Book", err)
-        // }
+        }
+        catch (err) {
+            console.log("Not able to delete Book", err)
+        }
 
     },
 
