@@ -130,7 +130,7 @@ const Books = () => {
                                 </div>
                                 {/* Div to dispaly the card body, image, authors and descrioption */}
                                 <div className="card-body row">
-                                    <img className="col-md-2" src={book.image} alt="book cover" />
+                                    <img className="col-md-2 book-image" src={book.image} alt="book cover" />
                                     <h3 className="col-md-2">{book.authors}</h3>
                                     <p className="col-md-8">{book.description}</p>
                                 </div>

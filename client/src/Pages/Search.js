@@ -121,7 +121,7 @@ export default class Search extends Component {
                                     </div>
                                     {/* Display each book */}
                                     <div className="card-body row">
-                                        <img className="col-md-2" src={`https://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=5&source=gbs_api`} alt="book cover" />
+                                        <img className="col-md-2 book-image" src={`https://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=5&source=gbs_api`} alt="book cover" />
                                         <h5 className="col-md-2">{book.volumeInfo.authors}</h5>
                                         <p className="col-md-8">{book.volumeInfo.description}</p>
 

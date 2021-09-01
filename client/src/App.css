@@ -33,6 +33,11 @@
   border: 1px solid black;
 }
 
+.book-image {
+  width: 50%;
+  height: 50%;
+}
+
 .no-books {
   height: 80vh;
 }
