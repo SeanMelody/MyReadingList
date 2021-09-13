@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useHistory } from "react-router-dom"
 import userContext from "../Context/UserContext"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios"
 
 const Books = () => {
@@ -12,10 +14,11 @@ const Books = () => {
     const history = useHistory()
 
 
+
     const deleteBook = async (book) => {
         console.log(book)
         console.log(book._id)
-
+        notify(book.title)
 
         // try {
         //     const delBook = await axios.delete("/readingList", book._id)
@@ -42,6 +45,7 @@ const Books = () => {
         // window.location.reload()
     }
 
+    const notify = (book) => toast(`${book} Deleted`)
 
     const readUnread = (book) => {
         // console.log(book)
@@ -50,6 +54,7 @@ const Books = () => {
 
 
     }
+
 
     // Delete account function
     const deleteAccount = async () => {
@@ -111,6 +116,7 @@ const Books = () => {
     return (
         <>
             <div>
+                <ToastContainer />
                 <h1 className="margin10">Your Reading List</h1>
 
                 {readingList.length ? (
