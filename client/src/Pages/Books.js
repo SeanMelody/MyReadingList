@@ -17,15 +17,15 @@ const Books = () => {
         console.log(book._id)
 
 
-        try {
-            const delBook = await axios.delete("/readingList", book._id)
-            console.log("after axios.delete")
-            console.log(delBook.data)
-            // notify(newBook.data.title)
-        }
-        catch (err) {
-            console.log(err)
-        }
+        // try {
+        //     const delBook = await axios.delete("/readingList", book._id)
+        //     console.log("after axios.delete")
+        //     console.log(delBook.data)
+        //     // notify(newBook.data.title)
+        // }
+        // catch (err) {
+        //     console.log(err)
+        // }
 
 
 
@@ -40,6 +40,15 @@ const Books = () => {
         //     })
         // Refresh the page so that the book is no longer shown
         // window.location.reload()
+    }
+
+
+    const readUnread = (book) => {
+        // console.log(book)
+        console.log("readUnread", book._id, book.read)
+
+
+
     }
 
     // Delete account function
@@ -111,10 +120,10 @@ const Books = () => {
                             // Set each book to a card
                             <div className="card margin10" key={book._id}>
                                 <div className="card-title row justify-content-around" >
-                                    <h4 className="col-md-5">{book.title}</h4>
+                                    <h4 className="col-md-4">{book.title}</h4>
                                     {/* Button to view the book on google books */}
                                     <button
-                                        className="btn btn-outline-primary margin10">
+                                        className="col-md-2 btn btn-outline-primary margin10">
                                         <a
                                             href={book.link} target="_blank" rel="noopener noreferrer"
                                         >
@@ -123,10 +132,13 @@ const Books = () => {
                                     </button>
                                     {/* Button to call the delete book function */}
                                     <button
-                                        className="btn btn-outline-danger margin10"
+                                        className="col-md-2 btn btn-outline-danger margin10"
                                         onClick={() => deleteBook(book)}>Delete Book
                                     </button>
-
+                                    <button
+                                        className="col-md-2 btn btn-outline-info margin10"
+                                        onClick={() => readUnread(book)}>Mark as Read
+                                    </button>
                                 </div>
                                 {/* Div to dispaly the card body, image, authors and descrioption */}
                                 <div className="card-body row">

@@ -20,6 +20,10 @@ const readingListSchema = new mongoose.Schema({
     link: {
         type: String
     },
+    read: {
+        type: Boolean,
+        default: false
+    },
     authorId: {
         type: String,
         // required: true,
