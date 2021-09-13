@@ -4,6 +4,7 @@ import userContext from "../Context/UserContext"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios"
+import ReadUnread from '../Components/ReadUnread';
 
 const Books = () => {
 
@@ -141,9 +142,12 @@ const Books = () => {
                                         className="col-md-2 btn btn-outline-danger margin10"
                                         onClick={() => deleteBook(book)}>Delete Book
                                     </button>
+                                    <ReadUnread color={book.read} />
+                                    <button>Read: {book.read}</button>
                                     <button
                                         className="col-md-2 btn btn-outline-info margin10"
-                                        onClick={() => readUnread(book)}>Mark as Read
+                                        // onClick={() => readUnread(book)}>Mark as Read
+                                        onClick={() => console.log(book.read)}>Mark as Read
                                     </button>
                                 </div>
                                 {/* Div to dispaly the card body, image, authors and descrioption */}
