@@ -77,7 +77,7 @@ function App() {
             <nav className="navbar">
               <h3 className="margin10">My Reading List</h3>
               <Link to="/">
-                <button className="btn btn-outline-dark margin10">Your List</button>
+                <button className="btn btn-outline-dark margin10">{userData.user.displayName}'s List</button>
               </Link>
               <Link to="/search">
                 <button className="btn btn-outline-dark margin10">Search For a Book</button>
