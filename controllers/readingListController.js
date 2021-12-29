@@ -65,6 +65,15 @@ module.exports = {
         }
     },
 
+    bookReadUnRead: async (req, res) => {
+        try {
+            console.log("ReadingListController bookReadUnread")
+        }
+        catch (err) {
+            console.log("Not able to set book to read/unread")
+        }
+    },
+
     deleteBook: async (req, res) => {
         // console.log("hi from Reading List Controller")
         // console.log(req)

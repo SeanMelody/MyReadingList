@@ -4,7 +4,7 @@ import userContext from "../Context/UserContext"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios"
-import ReadUnread from '../Components/ReadUnread';
+// import ReadUnread from '../Components/ReadUnread';
 
 const Books = () => {
 
@@ -48,9 +48,31 @@ const Books = () => {
 
     const notify = (book) => toast(`${book} Deleted`)
 
-    const readUnread = (book) => {
-        // console.log(book)
-        console.log("readUnread", book._id, book.read)
+    const readUnread = async (bookRead) => {
+        console.log(bookRead)
+
+        if (bookRead === false) {
+            console.log("Not Read")
+            try {
+                const setBookRead = await axios.put("/readingList", bookRead._id)
+                console.log("after axios.push")
+                console.log(setBookRead.data)
+                // notify(newBook.data.title)
+            }
+            catch (err) {
+                console.log(err)
+            }
+
+
+
+
+        }
+        else {
+            console.log("Unread")
+        }
+
+        // console.log("readUnread", book._id, book.read)
+        // let color = document.querySelector(".color")
 
 
 
@@ -142,12 +164,12 @@ const Books = () => {
                                         className="col-md-2 btn btn-outline-danger margin10"
                                         onClick={() => deleteBook(book)}>Delete Book
                                     </button>
-                                    <ReadUnread color={book.read} />
-                                    <button>Read: {book.read}</button>
+                                    {/* <ReadUnread color={book.read} /> */}
+                                    {/* <button>Read: {book.read}</button> */}
                                     <button
-                                        className="col-md-2 btn btn-outline-info margin10"
+                                        className="col-md-2 btn btn-outline-info margin10 color"
                                         // onClick={() => readUnread(book)}>Mark as Read
-                                        onClick={() => console.log(book.read)}>Mark as Read
+                                        onClick={() => readUnread(book.read)}>Mark as Read
                                     </button>
                                 </div>
                                 {/* Div to dispaly the card body, image, authors and descrioption */}
