@@ -67,7 +67,14 @@ module.exports = {
 
     bookReadUnRead: async (req, res) => {
         try {
-            console.log("ReadingListController bookReadUnread")
+            // console.log("ReadingListController bookReadUnread")
+            console.log(req.body)
+            const successRead = await ReadingList.findByIdAndUpdate(req.body.id)
+                .then((data) => {
+                    res.json(data)
+                    console.log(data)
+                })
+            console.log("Success Read")
         }
         catch (err) {
             console.log("Not able to set book to read/unread")
