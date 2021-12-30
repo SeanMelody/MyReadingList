@@ -148,6 +148,7 @@ const Books = () => {
                         {readingList.map((book) => (
                             // Set each book to a card
                             <div className="card margin10" key={book._id}>
+
                                 <div className="card-title row justify-content-around" >
                                     <h4 className="col-md-4">{book.title}</h4>
                                     {/* Button to view the book on google books */}
@@ -166,11 +167,24 @@ const Books = () => {
                                     </button>
                                     {/* <ReadUnread color={book.read} /> */}
                                     {/* <button>Read: {book.read}</button> */}
-                                    <button
+                                    {book.read === false ? (
+                                        <button
+                                            className="col-md-2 btn btn-outline-success margin10 color"
+                                            // onClick={() => readUnread(book)}>Mark as Read
+                                            onClick={() => readUnread(book.read)}>Mark as Read
+                                        </button>
+                                    ) :
+                                        (<button
+                                            className="col-md-2 btn btn-outline-info margin10 color"
+                                            // onClick={() => readUnread(book)}>Mark as Read
+                                            onClick={() => readUnread(book.read)}>Mark as Not Read
+                                        </button>)
+                                    }
+                                    {/* <button
                                         className="col-md-2 btn btn-outline-info margin10 color"
                                         // onClick={() => readUnread(book)}>Mark as Read
                                         onClick={() => readUnread(book.read)}>Mark as Read
-                                    </button>
+                                    </button> */}
                                 </div>
                                 {/* Div to dispaly the card body, image, authors and descrioption */}
                                 <div className="card-body row">
