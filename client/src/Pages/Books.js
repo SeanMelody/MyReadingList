@@ -48,34 +48,41 @@ const Books = () => {
 
     const notify = (book) => toast(`${book} Deleted`)
 
-    const readUnread = async (bookRead) => {
+    const markRead = async (book) => {
+        console.log(book)
+
+        let bookRead = {
+            id: book._id,
+            authorId: book.authorId,
+            title: book.title,
+            authors: book.authors,
+            description: book.description,
+            image: book.image,
+            link: book.link,
+            read: true,
+        }
+
         console.log(bookRead)
-
-        if (bookRead === false) {
-            console.log("Not Read")
-            try {
-                const setBookRead = await axios.put("/readingList", bookRead._id)
-                console.log("after axios.push")
-                console.log(setBookRead.data)
-                // notify(newBook.data.title)
-            }
-            catch (err) {
-                console.log(err)
-            }
-
-
-
-
+        try {
+            const setBookRead = await axios.put("/readingList", bookRead, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
+            console.log("after axios.push")
+            console.log(setBookRead.data)
+            // notify(newBook.data.title)
         }
-        else {
-            console.log("Unread")
+        catch (err) {
+            console.log(err)
         }
+
 
         // console.log("readUnread", book._id, book.read)
         // let color = document.querySelector(".color")
 
 
 
+    }
+
+    const markUnRead = async (book) => {
+        console.log("Mark Unread")
     }
 
 
@@ -171,13 +178,13 @@ const Books = () => {
                                         <button
                                             className="col-md-2 btn btn-outline-success margin10 color"
                                             // onClick={() => readUnread(book)}>Mark as Read
-                                            onClick={() => readUnread(book.read)}>Mark as Read
+                                            onClick={() => markRead(book)}>Mark as Read
                                         </button>
                                     ) :
                                         (<button
                                             className="col-md-2 btn btn-outline-info margin10 color"
                                             // onClick={() => readUnread(book)}>Mark as Read
-                                            onClick={() => readUnread(book.read)}>Mark as Not Read
+                                            onClick={() => markUnRead(book)}>Mark as Not Read
                                         </button>)
                                     }
                                     {/* <button
@@ -186,7 +193,7 @@ const Books = () => {
                                         onClick={() => readUnread(book.read)}>Mark as Read
                                     </button> */}
                                 </div>
-                                {/* Div to dispaly the card body, image, authors and descrioption */}
+                                {/* Div to dispaly the card body, image, authors and description */}
                                 <div className="card-body row">
                                     <img className="col-md-2 book-image" src={book.image} alt="book cover" />
                                     <h3 className="col-md-2">{book.authors}</h3>
