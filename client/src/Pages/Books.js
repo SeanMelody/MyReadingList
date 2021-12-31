@@ -49,18 +49,19 @@ const Books = () => {
     const notify = (book) => toast(`${book} Deleted`)
 
     const markRead = async (book) => {
-        console.log(book)
+        console.log(book._id)
 
-        let bookRead = {
-            id: book._id,
-            authorId: book.authorId,
-            title: book.title,
-            authors: book.authors,
-            description: book.description,
-            image: book.image,
-            link: book.link,
-            read: true,
-        }
+        // let bookRead = {
+        //     id: book._id,
+        //     authorId: book.authorId,
+        //     title: book.title,
+        //     authors: book.authors,
+        //     description: book.description,
+        //     image: book.image,
+        //     link: book.link,
+        //     read: true,
+        // }
+        let bookRead = book._id
 
         console.log(bookRead)
         try {

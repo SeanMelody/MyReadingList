@@ -69,7 +69,9 @@ module.exports = {
         try {
             // console.log("ReadingListController bookReadUnread")
             console.log(req.body)
-            const successRead = await ReadingList.findByIdAndUpdate(req.body.id)
+            let readId = req.body.id
+            console.log(readId)
+            const successRead = await ReadingList.findOneAndUpdate({ readId }, { read: true })
                 .then((data) => {
                     res.json(data)
                     console.log(data)
