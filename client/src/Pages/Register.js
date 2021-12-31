@@ -33,13 +33,13 @@ const Register = () => {
             <div className="container">
                 <form onSubmit={submit}>
                     <h3>Email</h3>
-                    <input onChange={onChange} type="text" name="email" className="row col-md-12"></input>
+                    <input onChange={onChange} type="text" name="email" className="row col-md-12 text-center"></input>
                     <h3>User Name</h3>
-                    <input onChange={onChange} type="text" name="displayName" className="row col-md-12"></input>
+                    <input onChange={onChange} type="text" name="displayName" className="row col-md-12 text-center"></input>
                     <h3>Password</h3>
-                    <input onChange={onChange} type="text" name="password" className="row col-md-12"></input>
+                    <input onChange={onChange} type="text" name="password" className="row col-md-12 text-center"></input>
                     <h3>Please Re-type your password</h3>
-                    <input onChange={onChange} type="text" name="passwordCheck" className="row col-md-12"></input>
+                    <input onChange={onChange} type="text" name="passwordCheck" className="row col-md-12 text-center"></input>
 
                     <input type="submit" className="btn btn-primary margin10" />
                 </form>
