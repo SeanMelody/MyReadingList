@@ -84,6 +84,7 @@ const Books = () => {
 
     const markUnRead = async (book) => {
         console.log("Mark Unread")
+        console.log(book)
     }
 
 
