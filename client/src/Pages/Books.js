@@ -49,7 +49,7 @@ const Books = () => {
     const notify = (book) => toast(`${book} Deleted`)
 
     const markRead = async (book) => {
-        console.log(book._id)
+        // console.log(book._id)
 
         // let bookRead = {
         //     id: book._id,
@@ -61,11 +61,13 @@ const Books = () => {
         //     link: book.link,
         //     read: true,
         // }
-        let bookRead = book._id
+        // let bookRead = book._id
 
-        console.log(bookRead)
+        // console.log(bookRead)
+
+        console.log(book)
         try {
-            const setBookRead = await axios.put("/readingList", bookRead, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
+            const setBookRead = await axios.put("/readingList", book, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
             console.log("after axios.push")
             console.log(setBookRead.data)
             // notify(newBook.data.title)
