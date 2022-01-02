@@ -76,6 +76,8 @@ module.exports = {
                     res.json(data)
                     console.log(successRead.data)
                 })
+
+            // res.json(successRead)
             console.log("Success Read")
         }
         catch (err) {
