@@ -50,6 +50,10 @@ html body {
   margin: 30px;
 }
 
+.delete-account {
+  margin: 50px;
+}
+
 .footer {
   position: fixed;
   left: 0;

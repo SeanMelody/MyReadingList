@@ -215,7 +215,7 @@ const Books = () => {
                 }
             </div>
             {/* On click button to delete account */}
-            <button onClick={deleteAccount} className="btn btn-danger margin10">Delete Account</button>
+            <button onClick={deleteAccount} className="btn btn-danger delete-account margin10">Delete Account</button>
 
             {/* Confirmation Thing from Github for Alert */}
             {/* <div className='delete-button' onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) this.onCancel(item) } } /> */}
