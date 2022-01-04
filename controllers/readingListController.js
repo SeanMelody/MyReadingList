@@ -65,19 +65,13 @@ module.exports = {
         }
     },
 
-    bookReadUnRead: async (req, res) => {
+    // Set a book to Read using the book Id
+    bookRead: async (req, res) => {
         try {
-            // console.log("ReadingListController bookReadUnread")
-            console.log(req.body)
             let readId = req.body._id
-            console.log(readId)
+            // console.log(readId)
             const successRead = await ReadingList.findOneAndUpdate({ _id: readId }, { read: true })
-            // .then((data) => {
-            //     res.json(data)
-            //     console.log(successRead.data)
-            // })
 
-            // res.json(successRead)
             console.log("Success Read")
         }
         catch (err) {

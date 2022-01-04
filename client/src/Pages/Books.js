@@ -87,6 +87,15 @@ const Books = () => {
     const markUnRead = async (book) => {
         console.log("Mark Unread")
         console.log(book)
+        try {
+            const setBookRead = await axios.put("/readingList", book, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
+            console.log("after axios.push")
+            console.log(setBookRead.data)
+            // notify(newBook.data.title)
+        }
+        catch (err) {
+            console.log(err)
+        }
     }
 
 
