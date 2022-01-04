@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const auth = require("../middleware/auth")
-const { newBook, getAllReadingList, getUserReadingList, deleteBook, bookRead } = require("../controllers/readingListController")
+const { newBook, getAllReadingList, getUserReadingList, deleteBook, bookRead, bookUnRead } = require("../controllers/readingListController")
 
 //Post a new book to your reading list
 router.post("/", auth, newBook)
@@ -13,6 +13,9 @@ router.delete("/", auth, deleteBook)
 
 // Route to set a book to Read
 router.put("/", auth, bookRead)
+
+// Route to set a book to Read
+router.patch("/", auth, bookUnRead)
 
 //Get all books for development purposes
 router.get("/all", getAllReadingList)

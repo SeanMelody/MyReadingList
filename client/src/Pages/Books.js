@@ -48,22 +48,8 @@ const Books = () => {
 
     const notify = (book) => toast(`${book} Deleted`)
 
+    // Set a book to Read when you hit the Mark Read Button
     const markRead = async (book) => {
-        // console.log(book._id)
-
-        // let bookRead = {
-        //     id: book._id,
-        //     authorId: book.authorId,
-        //     title: book.title,
-        //     authors: book.authors,
-        //     description: book.description,
-        //     image: book.image,
-        //     link: book.link,
-        //     read: true,
-        // }
-        // let bookRead = book._id
-
-        // console.log(bookRead)
 
         console.log(book)
         try {
@@ -76,19 +62,13 @@ const Books = () => {
             console.log(err)
         }
 
-
-        // console.log("readUnread", book._id, book.read)
-        // let color = document.querySelector(".color")
-
-
-
     }
-
+    // Set a book to UnRead when you hit the Mark UnRead Button
     const markUnRead = async (book) => {
         console.log("Mark Unread")
         console.log(book)
         try {
-            const setBookRead = await axios.put("/readingList", book, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
+            const setBookRead = await axios.patch("/readingList", book, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
             console.log("after axios.push")
             console.log(setBookRead.data)
             // notify(newBook.data.title)

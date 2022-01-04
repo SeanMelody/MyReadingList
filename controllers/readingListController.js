@@ -75,7 +75,21 @@ module.exports = {
             console.log("Success Read")
         }
         catch (err) {
-            console.log("Not able to set book to read/unread")
+            console.log("Not able to set book to read")
+        }
+    },
+
+    // Set a book to UnRead using the book Id
+    bookUnRead: async (req, res) => {
+        try {
+            let readId = req.body._id
+            // console.log(readId)
+            const successRead = await ReadingList.findOneAndUpdate({ _id: readId }, { read: false })
+
+            console.log("Success UnRead")
+        }
+        catch (err) {
+            console.log("Not able to set book to unread")
         }
     },
 
