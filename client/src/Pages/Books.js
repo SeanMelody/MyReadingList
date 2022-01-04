@@ -21,15 +21,15 @@ const Books = () => {
         console.log(book._id)
         notify(book.title)
 
-        // try {
-        //     const delBook = await axios.delete("/readingList", book._id)
-        //     console.log("after axios.delete")
-        //     console.log(delBook.data)
-        //     // notify(newBook.data.title)
-        // }
-        // catch (err) {
-        //     console.log(err)
-        // }
+        try {
+            const delBook = await axios.delete("/readingList", book, { headers: { "x-auth-token": localStorage.getItem("auth-token") } })
+            console.log("after axios.delete")
+            console.log(delBook.data)
+            // notify(newBook.data.title)
+        }
+        catch (err) {
+            console.log(err)
+        }
 
 
 

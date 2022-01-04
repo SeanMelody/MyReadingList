@@ -71,11 +71,11 @@ module.exports = {
             console.log(req.body)
             let readId = req.body._id
             console.log(readId)
-            const successRead = await ReadingList.findOneAndUpdate({ readId }, { read: true })
-                .then((data) => {
-                    res.json(data)
-                    console.log(successRead.data)
-                })
+            const successRead = await ReadingList.findOneAndUpdate({ _id: readId }, { read: true })
+            // .then((data) => {
+            //     res.json(data)
+            //     console.log(successRead.data)
+            // })
 
             // res.json(successRead)
             console.log("Success Read")
@@ -87,17 +87,18 @@ module.exports = {
 
     deleteBook: async (req, res) => {
         // console.log("hi from Reading List Controller")
-        // console.log(req)
-        try {
-            const successSave = await ReadingList.findByIdAndDelete(req.book)
-                .then((data) => {
-                    res.json(data)
-                })
+        console.log(req.body)
+        // try {
+        //     const deleteOne = await ReadingList.findByIdAndDelete(req.book)
+        //         .then((data) => {
+        //             res.json(data)
+        //             console.log(data)
+        //         })
 
-        }
-        catch (err) {
-            console.log("Not able to delete Book", err)
-        }
+        // }
+        // catch (err) {
+        //     console.log("Not able to delete Book", err)
+        // }
 
     },
 
