@@ -18,35 +18,21 @@ const Books = () => {
 
     const deleteBook = async (book) => {
         console.log(book)
-        console.log(book._id)
-        notify(book.title)
+
 
         try {
-            const delBook = await axios.delete("/readingList", book, { headers: { "x-auth-token": localStorage.getItem("auth-token") } })
-            console.log("after axios.delete")
+            const delBook = await axios.delete("/readingList", book, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
+            // console.log("after axios.delete")
             console.log(delBook.data)
             // notify(newBook.data.title)
         }
         catch (err) {
             console.log(err)
         }
-
-
-
-        // fetch(`/api/books/${book._id}`, {
-        //     method: 'DELETE'
-        //     // Json that response
-        // })
-        //     .then((response) => response.json())
-        //     .then((data) => {
-        //         // Console log the data
-        //         console.log(data)
-        //     })
-        // Refresh the page so that the book is no longer shown
-        // window.location.reload()
     }
 
-    const notify = (book) => toast(`${book} Deleted`)
+    // const notify = (book) => toast(`${book} Deleted`)
+
 
     // Set a book to Read when you hit the Mark Read Button
     const markRead = async (book) => {
@@ -57,6 +43,7 @@ const Books = () => {
             console.log("after axios.push")
             console.log(setBookRead.data)
             // notify(newBook.data.title)
+            window.location.reload()
         }
         catch (err) {
             console.log(err)
@@ -68,9 +55,9 @@ const Books = () => {
         console.log("Mark Unread")
         console.log(book)
         try {
-            const setBookRead = await axios.patch("/readingList", book, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
+            const setBookUnRead = await axios.patch("/readingList", book, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
             console.log("after axios.push")
-            console.log(setBookRead.data)
+            console.log(setBookUnRead.data)
             // notify(newBook.data.title)
         }
         catch (err) {
