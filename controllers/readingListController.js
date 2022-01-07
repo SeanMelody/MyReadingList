@@ -93,7 +93,7 @@ module.exports = {
         }
     },
 
-    deleteBook: (req, res) => {
+    deleteBook: async (req, res) => {
         console.log("hi from Reading List Controller")
 
         // console.log(req.body)
@@ -111,6 +111,7 @@ module.exports = {
         //     console.log("Not able to delete Book", err)
         // }
 
-    }
+    },
+
 
 }

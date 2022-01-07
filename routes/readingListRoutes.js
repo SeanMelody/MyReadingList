@@ -8,13 +8,13 @@ router.post("/", auth, newBook)
 //Get the reading list for display
 router.get("/", auth, getUserReadingList)
 
-//Route to delete a book
+// Route to delete a book
 router.delete("/", auth, deleteBook)
 
 // Route to set a book to Read
 router.put("/", auth, bookRead)
 
-// Route to set a book to Read
+// Route to set a book to UnRead
 router.patch("/", auth, bookUnRead)
 
 //Get all books for development purposes

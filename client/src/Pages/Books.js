@@ -42,6 +42,7 @@ const Books = () => {
             const setBookRead = await axios.put("/readingList", book, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
             console.log("after axios.push")
             console.log(setBookRead.data)
+            history.push("/welcome");
             // notify(newBook.data.title)
 
         }
@@ -64,7 +65,6 @@ const Books = () => {
             console.log(err)
         }
     }
-
 
     // Delete account function
     const deleteAccount = async () => {
