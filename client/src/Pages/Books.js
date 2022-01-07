@@ -43,12 +43,12 @@ const Books = () => {
             console.log("after axios.push")
             console.log(setBookRead.data)
             // notify(newBook.data.title)
-            window.location.reload()
+
         }
         catch (err) {
             console.log(err)
         }
-
+        window.location.reload()
     }
     // Set a book to UnRead when you hit the Mark UnRead Button
     const markUnRead = async (book) => {
