@@ -93,10 +93,10 @@ module.exports = {
         }
     },
 
-    deleteBook: async (req, res) => {
+    deleteBook: (req, res) => {
         console.log("hi from Reading List Controller")
 
-        // console.log(req.body)
+        console.log(req.body)
         // let deleteId = req.body._id
         // try {
         //     const deleteOne = await ReadingList.findOneAndDelete({ _id: deleteId })

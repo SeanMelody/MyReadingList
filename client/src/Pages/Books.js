@@ -19,7 +19,6 @@ const Books = () => {
     const deleteBook = async (book) => {
         console.log(book)
 
-
         try {
             const delBook = await axios.delete("/readingList", book, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
             // console.log("after axios.delete")
@@ -44,12 +43,12 @@ const Books = () => {
             console.log(setBookRead.data)
             history.push("/welcome");
             // notify(newBook.data.title)
-
+            window.location.reload()
         }
         catch (err) {
             console.log(err)
         }
-        window.location.reload()
+
     }
     // Set a book to UnRead when you hit the Mark UnRead Button
     const markUnRead = async (book) => {
