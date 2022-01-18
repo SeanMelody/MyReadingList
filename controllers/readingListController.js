@@ -101,10 +101,10 @@ module.exports = {
         console.log(deleteId)
         try {
             const deleteOne = await ReadingList.deleteOne({ _id: deleteId })
-            // .then((data) => {
-            //     res.json(data)
-            //     console.log(data)
-            // })
+                .then((data) => {
+                    res.json(data)
+                    console.log(data)
+                })
             console.log("deleted")
 
 

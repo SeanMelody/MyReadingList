@@ -24,6 +24,7 @@ const Books = () => {
             // console.log("after axios.delete")
             console.log(delBook.data)
             // notify(newBook.data.title)
+            history.push("/search");
         }
         catch (err) {
             console.log(err)
