@@ -20,7 +20,7 @@ const Books = () => {
         console.log(book)
 
         try {
-            const delBook = await axios.delete("/readingList", book, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
+            const delBook = await axios.delete("/readingList", { headers: { "x-auth-token": localStorage.getItem("auth-token") }, data: { source: book } })
             // console.log("after axios.delete")
             console.log(delBook.data)
             // notify(newBook.data.title)
