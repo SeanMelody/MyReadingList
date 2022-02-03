@@ -32,6 +32,11 @@ html body {
   margin-top: 50px;
 }
 
+.input-space {
+  height: 40px;
+  border-radius: 10px;
+}
+
 .card {
   background-color: rgb(235, 235, 235);
   border: 1px solid black;

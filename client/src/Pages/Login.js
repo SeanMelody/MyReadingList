@@ -24,7 +24,7 @@ const Login = () => {
 
             if (!data.user.confirmed) {
                 history.push("/confirm")
-                console.log("not confrimed")
+                console.log("not confirmed")
             } else {
                 console.log("confirmed")
                 setUserData({
@@ -56,14 +56,16 @@ const Login = () => {
     return (
         <div>
             <h1>Login</h1>
-            <div className="container text-center">
+            <div className="container text-center justify-content-center">
                 <form onSubmit={submitLoginForm}>
-                    <h3 className="col-md-12 ">Email:</h3>
-                    <input onChange={onChange} type="text" name="email" className="row col-md-12 text-center"></input>
-
-                    <h3 className="col-md-12">Password:</h3>
-                    <input onChange={onChange} type="text" name="password" className="row col-md-12 text-center"></input>
-
+                    <h3 className="col-md-12 marginTop">Email:</h3>
+                    <div className="row justify-content-center">
+                        <input onChange={onChange} type="text" name="email" className="col-md-6 text-center input-space"></input>
+                    </div>
+                    <h3 className="col-md-12 marginTop">Password:</h3>
+                    <div className="row justify-content-center">
+                        <input onChange={onChange} type="text" name="password" className="col-md-6 text-center input-space"></input>
+                    </div>
                     <input type="submit" className="btn btn-primary margin10" />
                 </form>
             </div>
