@@ -138,7 +138,7 @@ export default class Search extends Component {
                 ) : (
                     // Display this if there are no saved books yet
                     <div className="container">
-                        <h1 className="space-large">Search for a book and they will display here</h1>
+                        <h1 className="space-large">Search for a book and the results will display here</h1>
                     </div>
                 )}
 
