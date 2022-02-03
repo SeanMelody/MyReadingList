@@ -54,8 +54,8 @@ const Login = () => {
 
 
     return (
-        <div>
-            <h1>Login</h1>
+        <div className="sign-ins">
+            <h1 className="marginTop">Login</h1>
             <div className="container text-center justify-content-center space-large">
                 <form onSubmit={submitLoginForm}>
                     <h3 className="col-md-12 marginTop">Email:</h3>
