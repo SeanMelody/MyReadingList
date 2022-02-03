@@ -56,7 +56,7 @@ const Login = () => {
     return (
         <div>
             <h1>Login</h1>
-            <div className="container text-center justify-content-center">
+            <div className="container text-center justify-content-center space-large">
                 <form onSubmit={submitLoginForm}>
                     <h3 className="col-md-12 marginTop">Email:</h3>
                     <div className="row justify-content-center">
@@ -66,10 +66,10 @@ const Login = () => {
                     <div className="row justify-content-center">
                         <input onChange={onChange} type="text" name="password" className="col-md-6 text-center input-space"></input>
                     </div>
-                    <input type="submit" className="btn btn-primary margin10" />
+                    <input type="submit" className="btn btn-primary button-spacing border-dark" />
                 </form>
             </div>
-        </div>
+        </div >
     )
 }
 
