@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from "react"
-import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import Welcome from './Pages/Welcome';
 import Register from './Pages/Register';
 import Login from './Pages/Login';
@@ -20,7 +20,7 @@ function App() {
     token: undefined
   })
 
-  const history = useHistory()
+  // const history = useHistory()
 
   const checkLoggedIn = async () => {
     let token = localStorage.getItem("auth-token")
