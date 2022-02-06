@@ -167,11 +167,6 @@ const Books = () => {
                                             onClick={() => markUnRead(book)}>Mark as Not Read
                                         </button>)
                                     }
-                                    {/* <button
-                                        className="col-md-2 btn btn-outline-info margin10 color"
-                                        // onClick={() => readUnread(book)}>Mark as Read
-                                        onClick={() => readUnread(book.read)}>Mark as Read
-                                    </button> */}
                                 </div>
                                 {/* Div to dispaly the card body, image, authors and description */}
                                 <div className="card-body row">
@@ -194,7 +189,7 @@ const Books = () => {
             <button onClick={deleteAccount} className="btn btn-danger delete-account margin10">Delete Account</button>
 
             {/* Confirmation Thing from Github for Alert */}
-            {/* <div className='delete-button' onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) this.onCancel(item) } } /> */}
+
         </>
     )
 }
