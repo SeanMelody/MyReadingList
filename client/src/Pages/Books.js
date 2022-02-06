@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useHistory } from "react-router-dom"
 import userContext from "../Context/UserContext"
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios"
 // import ReadUnread from '../Components/ReadUnread';
@@ -23,7 +23,7 @@ const Books = () => {
             const delBook = await axios.delete("/readingList", { headers: { "x-auth-token": localStorage.getItem("auth-token") }, data: { source: book } })
             // console.log("after axios.delete")
             console.log(delBook.data)
-            // notify(newBook.data.title)
+            // notify(delBook.data.title)
             history.push("/search");
         }
         catch (err) {
@@ -126,7 +126,7 @@ const Books = () => {
     return (
         <>
             <div>
-                <ToastContainer />
+                {/* <ToastContainer /> */}
                 <h1 className="margin10">Your Reading List</h1>
 
                 {readingList.length ? (
