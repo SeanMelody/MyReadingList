@@ -39,9 +39,9 @@ app.use("/readingList", require("./routes/readingListRoutes"))
 app.use("/register", require("./routes/confirmRoutes"))
 
 
-// app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
-// })
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+})
 
 // Let the user know the server is running, and which port.  Yeay!
 app.listen(PORT, () => {
