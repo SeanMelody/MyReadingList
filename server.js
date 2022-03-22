@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require("mongoose")
 const path = require("path");
 const { isRegExp } = require("util");
+require("dotenv").config();
 const cors = require("cors");
 
 
