@@ -64,11 +64,6 @@ html body {
   margin: 30px;
 }
 
-.link a {
-  text-decoration: none !important;
-  color: rgb(57, 57, 57);
-}
-
 .delete-account {
   margin: 50px;
 }
