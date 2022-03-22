@@ -39,7 +39,7 @@ module.exports = {
     },
 
     getUserReadingList: async (req, res) => {
-        // console.log("getuserBurritos")
+        // console.log("getuserList")
 
         try {
             const allReadingList = await ReadingList.find({ authorId: req.user })
@@ -71,7 +71,10 @@ module.exports = {
             let readId = req.body._id
             // console.log(readId)
             const successRead = await ReadingList.findOneAndUpdate({ _id: readId }, { read: true })
-
+                .then((data) => {
+                    res.json(data)
+                    // console.log(data)
+                })
             console.log("Success Read")
         }
         catch (err) {
@@ -85,8 +88,12 @@ module.exports = {
             let readId = req.body._id
             // console.log(readId)
             const successRead = await ReadingList.findOneAndUpdate({ _id: readId }, { read: false })
-
+                .then((data) => {
+                    res.json(data)
+                    // console.log(data)
+                })
             console.log("Success UnRead")
+
         }
         catch (err) {
             console.log("Not able to set book to unread")

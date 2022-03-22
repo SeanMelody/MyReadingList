@@ -42,7 +42,7 @@ const Books = () => {
             const setBookRead = await axios.put("/readingList", book, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
             console.log("after axios.push")
             console.log(setBookRead.data)
-            history.push("/welcome");
+            history.push("/search");
             // notify(newBook.data.title)
             window.location.reload()
         }
@@ -60,6 +60,7 @@ const Books = () => {
             console.log("after axios.push")
             console.log(setBookUnRead.data)
             // notify(newBook.data.title)
+            history.push("/search");
         }
         catch (err) {
             console.log(err)
