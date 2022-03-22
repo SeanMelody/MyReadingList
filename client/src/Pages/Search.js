@@ -56,7 +56,7 @@ export default class Search extends Component {
         // Save book to the Mongoose database
         const saveBook = async (book) => {
 
-            console.log(book)
+            // console.log(book)
             let newSave = {
                 title: book.volumeInfo.title,
                 authors: book.volumeInfo.authors,
