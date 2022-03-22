@@ -140,7 +140,7 @@ const Books = () => {
                                     <h4 className="col-md-4">{book.title}</h4>
                                     {/* Button to view the book on google books */}
                                     <button
-                                        className="col-md-2 btn btn-outline-primary margin10">
+                                        className="col-md-2 btn btn-outline-primary margin10 link">
                                         <a
                                             href={book.link} target="_blank" rel="noopener noreferrer"
                                         >
@@ -149,7 +149,7 @@ const Books = () => {
                                     </button>
                                     {/* Button to call the delete book function */}
                                     <button
-                                        className="col-md-2 btn btn-outline-danger margin10"
+                                        className="col-md-2 btn btn-outline-danger margin10 link"
                                         onClick={() => deleteBook(book)}>Delete Book
                                     </button>
                                     {/* <ReadUnread color={book.read} /> */}
