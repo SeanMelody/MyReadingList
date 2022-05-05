@@ -133,9 +133,9 @@ const Books = () => {
                     cancelToken: source.token,
                     headers: { "x-auth-token": localStorage.getItem("auth-token") },
                 })
-
-                console.log(allBooks.data)
-                setReadingList(allBooks.data)
+                // SOrt the books so that they display from last added to first
+                console.log(allBooks.data.sort().reverse())
+                setReadingList(allBooks.data.sort())
             } catch (err) {
                 console.log(err)
             }
