@@ -58,11 +58,12 @@ const Books = () => {
         console.log(book)
         try {
             const setBookRead = await axios.put("/readingList", book, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
-            console.log("after axios.push")
+            // console.log("after axios.push")
             console.log(setBookRead.data)
-            history.push("/search");
-            // notify(newBook.data.title)
-            window.location.reload()
+            // history.push("/search");
+            // // notify(newBook.data.title)
+            // window.location.reload()
+            getBookList()
         }
         catch (err) {
             console.log(err)
@@ -75,10 +76,11 @@ const Books = () => {
         console.log(book)
         try {
             const setBookUnRead = await axios.patch("/readingList", book, { headers: { "x-auth-token": localStorage.getItem("auth-token") }, })
-            console.log("after axios.push")
+            // console.log("after axios.push")
             console.log(setBookUnRead.data)
             // notify(newBook.data.title)
-            history.push("/search");
+            // history.push("/search");
+            getBookList()
         }
         catch (err) {
             console.log(err)
