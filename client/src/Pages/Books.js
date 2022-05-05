@@ -24,7 +24,10 @@ const Books = () => {
             // console.log("after axios.delete")
             console.log(delBook.data)
             // notify(delBook.data.title)
-            history.push("/search");
+            // history.push("/search");
+
+            getBookList()
+
         }
         catch (err) {
             console.log(err)
@@ -32,6 +35,21 @@ const Books = () => {
     }
 
     // const notify = (book) => toast(`${book} Deleted`)
+
+    const getBookList = async () => {
+        try {
+            const allBooks = await axios.get("/readingList", {
+
+                headers: { "x-auth-token": localStorage.getItem("auth-token") },
+            })
+
+            console.log(allBooks.data)
+            setReadingList(allBooks.data)
+        } catch (err) {
+            console.log(err)
+        }
+
+    }
 
 
     // Set a book to Read when you hit the Mark Read Button
