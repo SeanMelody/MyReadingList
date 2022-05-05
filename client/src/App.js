@@ -81,7 +81,9 @@ function App() {
           :
           <>
             <nav className="navbar">
-              <h3 className="margin10">My Reading List</h3>
+              <Link to="/welcome">
+                <h3 className="margin10">My Reading List</h3>
+              </Link>
               <Link to="/">
                 <button className="btn btn-outline-dark margin10">{userData.user.displayName}'s List</button>
               </Link>
