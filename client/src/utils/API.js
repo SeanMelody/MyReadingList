@@ -12,8 +12,8 @@ const requestUrl = "https://www.googleapis.com/books/v1/volumes?q="
 // eslint-disable-next-line
 export default {
     // Set it to a function
-    APISearch: function (query) {
+    APISearch: function () {
         // console.log(requestUrl + query + APIKEY)
-        return axios.get(requestUrl + query + APIKEY);
+        return axios.get(requestUrl + 'Tolken' + APIKEY);
     }
 };
