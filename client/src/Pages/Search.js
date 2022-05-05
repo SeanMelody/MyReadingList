@@ -47,7 +47,7 @@ export default class Search extends Component {
         // call the searchBooks function!
         this.searchBooks(this.state.search);
         // Console log what is searched
-        // console.log(this.state.search)
+        console.log(this.state.search)
     };
 
     // Render all the data using React!
